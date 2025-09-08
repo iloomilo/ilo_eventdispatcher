@@ -23,8 +23,37 @@ Creates a new event object.
 **Example:**
 
 ```lua
-local event = exports.resourceName:CreateEvent()
+local event = exports['ilo_eventdispatcher']:CreateEvent()
 event:set("foo", "bar")
+```
+
+---
+
+### `RegisterListener(eventName: string, callback: fun(event: EventObject))`
+
+Registers a listener for the given event name. Multiple listeners can be registered for the same event.
+
+**Example:**
+
+```lua
+exports['ilo_eventdispatcher']:RegisterListener("my:event", function(event)
+    print("foo is:", event:get("foo"))
+end)
+```
+
+---
+
+### `DispatchEvent(eventName: string, event: EventObject)`
+
+Dispatches an event to all listeners registered under `eventName`. Listeners are executed in the order they were registered. Propagation can be stopped using `event:stopPropagation()`.
+
+**Example:**
+
+```lua
+local event = exports['ilo_eventdispatcher']:CreateEvent()
+event:set("foo", "bar")
+
+exports['ilo_eventdispatcher']:DispatchEvent("my:event", event)
 ```
 
 ---
