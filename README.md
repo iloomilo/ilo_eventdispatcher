@@ -115,9 +115,8 @@ exports['ilo_eventdispatcher']:RegisterListener('qbx_core:sendPaycheck', functio
         local src = player.PlayerData.source
         local citizenid = player.PlayerData.citizenid
 
-        if IsShopDuty(src) and CanGetShopPaycheck(citizenid) then
+        if IsShopDuty(src) then
             currentPayment = currentPayment + config.payCheck
-            AddShopPaycheck(citizenid, src)
 
             -- Update event payment value
             event:set('payment', currentPayment)
