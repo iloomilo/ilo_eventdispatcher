@@ -113,7 +113,6 @@ exports['ilo_eventdispatcher']:RegisterListener('qbx_core:sendPaycheck', functio
 
     if player.PlayerData.source ~= nil then
         local src = player.PlayerData.source
-        local citizenid = player.PlayerData.citizenid
 
         if IsShopDuty(src) then
             currentPayment = currentPayment + config.payCheck
