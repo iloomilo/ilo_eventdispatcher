@@ -1,6 +1,6 @@
 # ilo_eventdispatcher
 
-A lightweight Lua-based **event dispatcher** designed for modular event handling in FiveM/Alt\:V or other Lua environments. This module allows you to create custom events, register listeners, and control event propagation.
+A lightweight Lua-based **event dispatcher** designed for modular event handling in FiveM. This module allows you to create custom events, register listeners, and control event propagation.
 
 ---
 
