@@ -86,7 +86,7 @@ We dispatch an event that can be listened to anywhere, allowing other resources 
     --- @param player Player Player object
     --- @param payment number Payment amount
     sendPaycheck = function(player, payment)
-        local event = exports['ilo_utils']:CreateEvent()
+        local event = exports['ilo_eventdispatcher']:CreateEvent()
         event:set('player', player)
         event:set('payment', payment)
 
